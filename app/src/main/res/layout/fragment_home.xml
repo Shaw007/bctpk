@@ -1,0 +1,45 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.srmstudios.bachatdotpk.ui.home.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        >
+        <TextView
+            android:id="@+id/txtShoppingMalls"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/shopping_malls"
+            android:gravity="center"
+            />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            />
+        <TextView
+            android:id="@+id/txtDiscountOnYourCards"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/discount_on_your_cards"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+</FrameLayout>
+
+
+
+
+
+
+
+
+
