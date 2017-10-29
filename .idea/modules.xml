@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BachatDotPK.iml" filepath="$PROJECT_DIR$/BachatDotPK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BachatDotPK GIT.iml" filepath="$PROJECT_DIR$/BachatDotPK GIT.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
