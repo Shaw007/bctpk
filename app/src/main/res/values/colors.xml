@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="grey_dark_carousal_fill">#3C3C3C</color>
     <color name="black_transparent">#99000000</color>
+    <color name="black_transparent_less_4">#4D000000</color>
+    <color name="white">@android:color/white</color>
 </resources>

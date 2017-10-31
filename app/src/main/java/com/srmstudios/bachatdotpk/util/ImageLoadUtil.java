@@ -30,4 +30,14 @@ public class ImageLoadUtil {
                 .apply(requestOptions)
                 .into(imageView);
     }
+
+    public void loadShoppingMallAvatarImage(ImageView imageView, String url) {
+        RequestOptions requestOptions = new RequestOptions();
+        requestOptions
+                .placeholder(R.mipmap.ic_launcher);
+        Glide.with(context)
+                .load(url)
+                .apply(requestOptions)
+                .into(imageView);
+    }
 }

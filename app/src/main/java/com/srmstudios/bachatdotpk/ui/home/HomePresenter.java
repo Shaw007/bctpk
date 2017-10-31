@@ -1,6 +1,7 @@
 package com.srmstudios.bachatdotpk.ui.home;
 
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 
 import com.srmstudios.bachatdotpk.util.ImageLoadUtil;
@@ -17,7 +18,9 @@ public class HomePresenter implements HomeMVP.Presenter {
     private HomeMVP.View view;
     private HomeMVP.Model model;
     private ImageLoadUtil imageLoadUtil;
-    List<String> bannerImages;
+    private List<String> bannerImages;
+    private HomeAdapter homeAdapter;
+
 
     public HomePresenter(HomeMVP.Model model,ImageLoadUtil imageLoadUtil){
         this.model = model;
@@ -59,6 +62,12 @@ public class HomePresenter implements HomeMVP.Presenter {
         }
     }
 
+    @Override
+    public void setupShoppingMalls(RecyclerView recyclerView) {
+        homeAdapter = new HomeAdapter(imageLoadUtil,model.getShoppingMalls());
+        recyclerView.setAdapter(homeAdapter);
+    }
+
     ImageListener imageListener = new ImageListener() {
         @Override
         public void setImageForPosition(int position, ImageView imageView) {
@@ -67,3 +76,18 @@ public class HomePresenter implements HomeMVP.Presenter {
         }
     };
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

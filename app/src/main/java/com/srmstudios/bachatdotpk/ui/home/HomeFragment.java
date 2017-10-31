@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import com.srmstudios.bachatdotpk.App;
 import com.srmstudios.bachatdotpk.R;
 import com.srmstudios.bachatdotpk.ui.shopping_malls.ShoppingMallActivity;
+import com.srmstudios.bachatdotpk.util.ImageLoadUtil;
 import com.srmstudios.bachatdotpk.util.ToastUtil;
 import com.synnapps.carouselview.CarouselView;
 
@@ -31,6 +32,8 @@ public class HomeFragment extends Fragment implements HomeMVP.View {
     HomeMVP.Presenter presenter;
     @Inject
     ToastUtil toastUtil;
+    @Inject
+    ImageLoadUtil imageLoadUtil; // for HomeAdapter class
 
     @BindView(R.id.carouselView)
     CarouselView carouselView;
@@ -65,6 +68,7 @@ public class HomeFragment extends Fragment implements HomeMVP.View {
         recyclerViewShoppingMalls.setNestedScrollingEnabled(false);
 
         presenter.setupCarousalBanner(carouselView);
+        presenter.setupShoppingMalls(recyclerViewShoppingMalls);
     }
 
     @Override
