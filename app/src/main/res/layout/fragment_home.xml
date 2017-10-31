@@ -2,36 +2,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.srmstudios.bachatdotpk.ui.home.HomeFragment">
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:orientation="horizontal"
-        android:layout_gravity="center_vertical"
+        android:layout_height="match_parent"
         >
-        <TextView
-            android:id="@+id/txtShoppingMalls"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/shopping_malls"
-            android:gravity="center"
-            />
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@color/colorPrimary"
-            />
-        <TextView
-            android:id="@+id/txtDiscountOnYourCards"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/discount_on_your_cards"
-            android:gravity="center"
-            />
-    </LinearLayout>
+            android:orientation="vertical"
+            >
+            <com.synnapps.carouselview.CarouselView
+                android:id="@+id/carouselView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                app:fillColor="@color/grey_dark_carousal_fill"
+                app:pageColor="#00000000"
+                app:radius="4dp"
+                app:slideInterval="3000"
+                app:strokeColor="@color/black_transparent"
+                app:strokeWidth="0.5dp"
+                app:indicatorGravity="bottom|right"
+                />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewShoppingMalls"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 
 </FrameLayout>
 

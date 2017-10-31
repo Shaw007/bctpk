@@ -1,5 +1,7 @@
 package com.srmstudios.bachatdotpk.ui.home;
 
+import com.srmstudios.bachatdotpk.util.ImageLoadUtil;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -10,7 +12,12 @@ import dagger.Provides;
 public class HomeModule {
 
     @Provides
-    HomeMVP.Presenter provideHomePresenter(){
-        return new HomePresenter();
+    HomeMVP.Presenter provideHomePresenter(HomeMVP.Model model, ImageLoadUtil imageLoadUtil){
+        return new HomePresenter(model,imageLoadUtil);
+    }
+
+    @Provides
+    HomeMVP.Model provideHomeModel(){
+        return new HomeModel();
     }
 }
