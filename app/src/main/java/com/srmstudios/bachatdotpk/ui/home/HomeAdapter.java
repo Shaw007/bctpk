@@ -23,10 +23,12 @@ import butterknife.ButterKnife;
 public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private ImageLoadUtil imageLoadUtil;
     private List<ShoppingMallResponse> shoppingMalls;
+    private IShoppingMallItemClickListener iShoppingMallItemClickListener;
 
-    public HomeAdapter(ImageLoadUtil imageLoadUtil,List<ShoppingMallResponse> shoppingMalls){
+    public HomeAdapter(ImageLoadUtil imageLoadUtil,IShoppingMallItemClickListener iShoppingMallItemClickListener,List<ShoppingMallResponse> shoppingMalls){
         this.imageLoadUtil = imageLoadUtil;
         this.shoppingMalls = shoppingMalls;
+        this.iShoppingMallItemClickListener = iShoppingMallItemClickListener;
     }
 
     @Override
@@ -55,7 +57,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         return shoppingMalls.size();
     }
 
-    public class HomeViewHolder extends RecyclerView.ViewHolder{
+    public class HomeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         @BindView(R.id.imgPicture)
         ImageView imgPicture;
         @BindView(R.id.txtName)
@@ -64,6 +66,11 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         public HomeViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
+        }
+
+        @Override
+        public void onClick(View view) {
+            iShoppingMallItemClickListener.onShoppingMallItemClick(shoppingMalls.get(getLayoutPosition()));
         }
     }
 }

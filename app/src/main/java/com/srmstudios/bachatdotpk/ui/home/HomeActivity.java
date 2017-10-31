@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
 import com.srmstudios.bachatdotpk.R;
-import com.srmstudios.bachatdotpk.ui.activity.BaseActivity;
+import com.srmstudios.bachatdotpk.ui.BaseActivity;
 
 public class HomeActivity extends BaseActivity {
     @Override

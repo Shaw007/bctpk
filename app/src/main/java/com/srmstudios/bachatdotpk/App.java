@@ -2,6 +2,7 @@ package com.srmstudios.bachatdotpk;
 
 import android.app.Application;
 
+import com.srmstudios.bachatdotpk.data.network.BachatRetrofitModule;
 import com.srmstudios.bachatdotpk.di.ApplicationComponent;
 import com.srmstudios.bachatdotpk.di.ApplicationModule;
 import com.srmstudios.bachatdotpk.di.DaggerApplicationComponent;
@@ -22,6 +23,7 @@ public class App extends Application {
         component = DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))
                 .utilModule(new UtilModule(this.getApplicationContext()))
+                .bachatRetrofitModule(new BachatRetrofitModule())
                 .splashModule(new SplashModule())
                 .homeModule(new HomeModule())
                 .build();

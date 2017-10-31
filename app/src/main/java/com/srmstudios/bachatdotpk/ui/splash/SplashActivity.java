@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.View;
 
 import com.srmstudios.bachatdotpk.R;
-import com.srmstudios.bachatdotpk.ui.activity.BaseActivity;
+import com.srmstudios.bachatdotpk.ui.BaseActivity;
 
 public class SplashActivity extends BaseActivity {
 

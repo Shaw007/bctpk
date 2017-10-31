@@ -14,7 +14,8 @@ import android.view.ViewGroup;
 
 import com.srmstudios.bachatdotpk.App;
 import com.srmstudios.bachatdotpk.R;
-import com.srmstudios.bachatdotpk.ui.shopping_malls.ShoppingMallActivity;
+import com.srmstudios.bachatdotpk.ui.shopping_mall_detail.ShoppingMallDetailActivity;
+import com.srmstudios.bachatdotpk.ui.shopping_mall_detail.ShoppingMallDetailFragment;
 import com.srmstudios.bachatdotpk.util.ImageLoadUtil;
 import com.srmstudios.bachatdotpk.util.ToastUtil;
 import com.synnapps.carouselview.CarouselView;
@@ -77,14 +78,20 @@ public class HomeFragment extends Fragment implements HomeMVP.View {
         presenter.setView(this);
     }
 
-    public static void openShoppingMallActivity(Context context){
-        Intent intent = new Intent(context, ShoppingMallActivity.class);
+    public static void startShoppingMallDetailActivity(Context context, int shoppingMallId){
+        Intent intent = new Intent(context, ShoppingMallDetailActivity.class);
+        intent.putExtra(ShoppingMallDetailFragment.KEY_SHOPPING_MALL_ID,shoppingMallId);
         context.startActivity(intent);
     }
 
     @Override
     public void showExceptionError(String errorMessage) {
         toastUtil.showToastLongTime(errorMessage);
+    }
+
+    @Override
+    public void openShoppingDetailActivity(int shoppingMallId) {
+        startShoppingMallDetailActivity(getActivity(),shoppingMallId);
     }
 
 

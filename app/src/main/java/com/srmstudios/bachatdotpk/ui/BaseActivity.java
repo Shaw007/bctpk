@@ -1,4 +1,4 @@
-package com.srmstudios.bachatdotpk.ui.activity;
+package com.srmstudios.bachatdotpk.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

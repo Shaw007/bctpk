@@ -14,6 +14,7 @@ import java.util.List;
 public class HomeMVP {
     interface View{
         void showExceptionError(String errorMessage);
+        void openShoppingDetailActivity(int shoppingMallId);
     }
 
     interface Presenter{

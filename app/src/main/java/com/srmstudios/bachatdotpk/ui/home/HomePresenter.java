@@ -4,6 +4,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 
+import com.srmstudios.bachatdotpk.data.network.model.response.ShoppingMallResponse;
 import com.srmstudios.bachatdotpk.util.ImageLoadUtil;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
@@ -14,7 +15,7 @@ import java.util.List;
  * Created by Admin on 10/23/2017.
  */
 
-public class HomePresenter implements HomeMVP.Presenter {
+public class HomePresenter implements HomeMVP.Presenter,IShoppingMallItemClickListener{
     private HomeMVP.View view;
     private HomeMVP.Model model;
     private ImageLoadUtil imageLoadUtil;
@@ -64,7 +65,7 @@ public class HomePresenter implements HomeMVP.Presenter {
 
     @Override
     public void setupShoppingMalls(RecyclerView recyclerView) {
-        homeAdapter = new HomeAdapter(imageLoadUtil,model.getShoppingMalls());
+        homeAdapter = new HomeAdapter(imageLoadUtil,this,model.getShoppingMalls());
         recyclerView.setAdapter(homeAdapter);
     }
 
@@ -75,6 +76,11 @@ public class HomePresenter implements HomeMVP.Presenter {
             imageLoadUtil.loadBannerImage(imageView,bannerImages.get(position));
         }
     };
+
+    @Override
+    public void onShoppingMallItemClick(ShoppingMallResponse shoppingMall) {
+        view.openShoppingDetailActivity(shoppingMall.getId());
+    }
 }
 
 

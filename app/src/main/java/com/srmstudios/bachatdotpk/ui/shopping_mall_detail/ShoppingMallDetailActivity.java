@@ -1,13 +1,12 @@
-package com.srmstudios.bachatdotpk.ui.shopping_malls;
+package com.srmstudios.bachatdotpk.ui.shopping_mall_detail;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
 import com.srmstudios.bachatdotpk.R;
-import com.srmstudios.bachatdotpk.ui.activity.BaseActivity;
-import com.srmstudios.bachatdotpk.ui.home.HomeFragment;
+import com.srmstudios.bachatdotpk.ui.BaseActivity;
 
-public class ShoppingMallActivity extends BaseActivity {
+public class ShoppingMallDetailActivity extends BaseActivity {
     @Override
     public int getLayout() {
         return R.layout.activity_base_without_drawer;
@@ -15,7 +14,7 @@ public class ShoppingMallActivity extends BaseActivity {
 
     @Override
     public Fragment getFragment() {
-        return new ShoppingMallFragment();
+        return new ShoppingMallDetailFragment();
     }
 
     @Override
