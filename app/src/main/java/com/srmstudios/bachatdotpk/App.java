@@ -3,12 +3,12 @@ package com.srmstudios.bachatdotpk;
 import android.app.Application;
 
 import com.srmstudios.bachatdotpk.data.network.BachatRetrofitModule;
-import com.srmstudios.bachatdotpk.di.ApplicationComponent;
-import com.srmstudios.bachatdotpk.di.ApplicationModule;
-import com.srmstudios.bachatdotpk.di.DaggerApplicationComponent;
-import com.srmstudios.bachatdotpk.ui.shopping_mall_detail.ShoppingMallDetailModule;
-import com.srmstudios.bachatdotpk.util.UtilModule;
+import com.srmstudios.bachatdotpk.di.component.ApplicationComponent;
+import com.srmstudios.bachatdotpk.di.component.DaggerApplicationComponent;
+import com.srmstudios.bachatdotpk.di.module.ApplicationModule;
+import com.srmstudios.bachatdotpk.di.module.UtilModule;
 import com.srmstudios.bachatdotpk.ui.home.HomeModule;
+import com.srmstudios.bachatdotpk.ui.shopping_mall_detail.ShoppingMallDetailModule;
 import com.srmstudios.bachatdotpk.ui.splash.SplashModule;
 
 /**
@@ -23,8 +23,9 @@ public class App extends Application {
         super.onCreate();
         component = DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))
-                .utilModule(new UtilModule(this.getApplicationContext()))
+                .utilModule(new UtilModule())
                 .bachatRetrofitModule(new BachatRetrofitModule())
+
                 .splashModule(new SplashModule())
                 .homeModule(new HomeModule())
                 .shoppingMallDetailModule(new ShoppingMallDetailModule())
@@ -37,3 +38,29 @@ public class App extends Application {
         return component;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

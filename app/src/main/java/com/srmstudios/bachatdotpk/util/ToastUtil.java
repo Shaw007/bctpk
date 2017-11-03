@@ -3,13 +3,18 @@ package com.srmstudios.bachatdotpk.util;
 import android.content.Context;
 import android.widget.Toast;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
 /**
  * Created by Admin on 10/31/2017.
  */
 
+@Singleton
 public class ToastUtil {
     private Context context;
 
+    @Inject
     public ToastUtil(Context context) {
         this.context = context;
     }

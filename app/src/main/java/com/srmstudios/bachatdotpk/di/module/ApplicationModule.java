@@ -1,7 +1,9 @@
-package com.srmstudios.bachatdotpk.di;
+package com.srmstudios.bachatdotpk.di.module;
 
 import android.app.Application;
 import android.content.Context;
+
+import com.srmstudios.bachatdotpk.di.ApplicationContext;
 
 import javax.inject.Singleton;
 
@@ -22,6 +24,7 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
+    @ApplicationContext
     public Context getContext(){
         return application;
     }

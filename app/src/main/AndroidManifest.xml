@@ -20,7 +20,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.home.HomeActivity" />
-        <activity android:name=".ui.shopping_malls.ShoppingMallActivity" />
         <activity android:name=".ui.shopping_mall_detail.ShoppingMallDetailActivity"></activity>
     </application>
 
