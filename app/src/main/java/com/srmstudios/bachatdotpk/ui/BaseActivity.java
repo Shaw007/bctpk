@@ -29,10 +29,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getLayout());
         ButterKnife.bind(this);
         setSupportActionBar(getToolbar());
-        initialize();
+        initializeFragment();
     }
 
-    private void initialize(){
+    private void initializeFragment(){
         FragmentManager manager = getSupportFragmentManager();
         Fragment fragment = manager.findFragmentById(R.id.fragmentContainer);
         if(fragment == null){
@@ -47,7 +47,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 
 
-
+    // GETTER SETTERS
 
     public Toolbar getToolbar() {
         return toolbar;
